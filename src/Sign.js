@@ -18,9 +18,17 @@ class Sign {
         const body = decodeURIComponent(dv.getEvaluatedString());
         const params = new URLSearchParams(body);
         params.sort();
-        const toSign = params.toString() + '&key=' + this.key;
+        const toSign = this.paramsString(params) + '&key=' + this.key;
         const hash = sha256.create();
         hash.update(toSign);
         return hash.hex().toUpperCase();
     }
+
+    paramsString(params) {
+        var query = [];
+        for (var key of params.keys()) {
+            query.push(key + '=' + params.get(key));
+        }
+        return query.join('&');
+    };
 }
