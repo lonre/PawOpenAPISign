@@ -1,6 +1,9 @@
 [![Build Status](https://travis-ci.org/luckymarmot/Paw-DigestAuthDynamicValue.svg?branch=master)](https://travis-ci.org/luckymarmot/Paw-DigestAuthDynamicValue)
 
 ## Development
+```shell
+make clean && make build && make install
+```
 
 ### Prerequisites
 
